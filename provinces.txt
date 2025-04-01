@@ -1,0 +1,42 @@
+Documentation for Provinces
+The Provinces used by botanists in the Nordic countries don't follow the modern administrative borders the cause is that the administrative borders change and there are a long history with other used on labels for old specimens. So here is a map that follows what commonly is used by the Swedish Herbaria. The borders towards water follows the international water boundary and don't try to follow the coastline. Even UK is added with its countries. 
+It’s a geopackage with multipolygons in WGS84. Multipolygons is used to be able to handle exclaves with one record in the attribute table for the province. WGS84 so it can work for the whole world and it’s not needed with sub 1 meter accuracy.
+Attribute table
+Country (varchar 64) – The international name of the country the province belongs to. It’s sometimes not a formal sovereign country and some practical solution is sometimes necessary.
+Province (varchar 40) – The name of the province in the country’s language. An exception is Finland where the Latin names are used.
+comments (text) – Comments on stuff like border changes
+code (varchar 10)-  the ISO-6166-2 code for the province if it’s an administrative division that have ISO code.
+alt_names (text) – A comma separated list of alternative names that may have been used for the province, it can help for searching.
+type_native (varchar 45) – The division name/type 
+
+Norway 
+In Norway Fylker with the border from 2017 is used. There have been some resent instability with the Fylker merged and then split. They were stable between 1972 and 2018. Before 1919 they were called amt, and most of the names was also changed 1918-1919.
+I am using and modified version from https://kartkatalog.geonorge.no  "Administrative enheter - historiske versjoner" fylker from 2019. Tröndelag splitted into north/ south Tröndelag and CRC changed, attribute table changes and so on.
+
+Denmark
+Big islands are used as provinces. 
+Borders is drawn from scratch small islands in-between the bigger are grouped together so Kommune is not unnecessary split.
+
+Sweden
+Landskap with Lappland divided into lappmarker is used as provinces. Landskap haven't been used for administration for a long time and there are confusion of the exact borders. At least in the Northern part of Sweden decisions and marking in the field have been done in 1700’s with old records in texts that is possible but hard to interpret. And the exact borders may never have been printed on a map. The borders often don’t follow the borders of socken, kommun och Län and have often never been drawn correctly on any maps.
+Borders modified from https://github.com/mossnisse/Floraprovinser. CRC changed and borders towards Norway and Finland corrected so no gaps occurs. The attribute table is also changed.
+
+Finland
+Biological provinces is used ("eliömaakunnat" or "luonnontieteelliset maakunnat" in Finnish). I lost my references for the exact borders. Should be based on municipality borders from 1930. https://laji.fi/en/about/3061. Haven't checked if my does?
+The biological provinces is roughly the old maakunta/historical provinces/historiska landskap that often is further divided. They differ greatly to the new administrative maakunta/regions/landskap and the slightly older provinces/läänit/län that was used as administrative division between 1634 and 2009.
+
+Iceland
+Provinces follows the regions/Landshlutar Íslands borders that was the parliamentary constituencies between 1959 and 2003.
+Names is spelled with d instead of ð. Polygons are drawn from scratch, Open streetmap and data from Lýsigagnagátt (https://gatt.lmi.is/geonetwork/srv/ice/catalog.search#/home) have been used as reference.
+
+Svalbard and Jan Mayen
+Svalbard and Jan Mayen are territories belong to Norway, here they are counted as a country called "Svalbard and Jan Mayen" and is divided into three provinces, Svalbard, Jan Mayen and Bjørnøya. Borders drawn from scratch.
+
+Faroe Islands
+Faroe Islands is an autonomous territory of Denmark divided into 18 main islands that here is used as provinces. Names is spelled with d instead of ð. Polygons are drawn from scratch between the islands so it looks good on the map.
+
+Greenland
+We don't use any provinces for Greenland.
+
+United Kingdom
+The different countries are used as Provinces. England, Scotland, Wales, Northern Ireland and even Isle of Man is used a province of the UK even if Isle of Man formally isn't an part of the UK. On the other hand Guernsey and Jersey are handled as two separate countries. The modern borders from 2025 are used. Polygons drawn from scratch with Open streetmap and data from ONS used as references.
